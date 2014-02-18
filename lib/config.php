@@ -23,7 +23,7 @@ function roots_main_class() {
     $class = 'small-8 columns';
   } else {
     // Classes on full width pages
-    $class = 'small-12';
+    $class = 'small-12 columns';
   }
 
   return $class;
@@ -33,7 +33,7 @@ function roots_main_class() {
  * .sidebar classes
  */
 function roots_sidebar_class() {
-  return 'col-sm-4';
+  return 'small-4 columns';
 }
 
 /**

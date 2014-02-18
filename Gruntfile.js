@@ -12,20 +12,13 @@ module.exports = function(grunt) {
         '!assets/js/scripts.min.js'
       ]
     },
-    less: {
+    sass: {
       dist: {
-        files: {
-          'assets/css/main.min.css': [
-            'assets/less/app.less'
-          ]
-        },
         options: {
-          compress: true,
-          // LESS source map
-          // To enable, set sourceMap to true and update sourceMapRootpath based on your install
-          sourceMap: false,
-          sourceMapFilename: 'assets/css/main.min.css.map',
-          sourceMapRootpath: '/app/themes/roots/'
+          style: 'compressed'
+        },
+        files: {
+          'assets/css/main.min.css' : 'assets/scss/app.scss'
         }
       }
     },
@@ -33,18 +26,22 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'assets/js/scripts.min.js': [
-            'assets/js/plugins/bootstrap/transition.js',
-            'assets/js/plugins/bootstrap/alert.js',
-            'assets/js/plugins/bootstrap/button.js',
-            'assets/js/plugins/bootstrap/carousel.js',
-            'assets/js/plugins/bootstrap/collapse.js',
-            'assets/js/plugins/bootstrap/dropdown.js',
-            'assets/js/plugins/bootstrap/modal.js',
-            'assets/js/plugins/bootstrap/tooltip.js',
-            'assets/js/plugins/bootstrap/popover.js',
-            'assets/js/plugins/bootstrap/scrollspy.js',
-            'assets/js/plugins/bootstrap/tab.js',
-            'assets/js/plugins/bootstrap/affix.js',
+            'assets/js/plugins/foundation/abide.js',
+            'assets/js/plugins/foundation/accordian.js',
+            'assets/js/plugins/foundation/alert.js',
+            'assets/js/plugins/foundation/clearing.js',
+            'assets/js/plugins/foundation/dropdown.js',
+            'assets/js/plugins/foundation/framework.js',
+            'assets/js/plugins/foundation/helpers.js',
+            'assets/js/plugins/foundation/interchange.js',
+            'assets/js/plugins/foundation/joyride.js',
+            'assets/js/plugins/foundation/magellan.js',
+            'assets/js/plugins/foundation/offcanvas.js',
+            'assets/js/plugins/foundation/orbit.js',
+            'assets/js/plugins/foundation/reveal.js',
+            'assets/js/plugins/foundation/tab.js',
+            'assets/js/plugins/foundation/tooltip.js',
+            'assets/js/plugins/foundation/topbar.js',
             'assets/js/plugins/*.js',
             'assets/js/_*.js'
           ]
@@ -66,12 +63,13 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      less: {
+      sass: {
         files: [
-          'assets/less/*.less',
-          'assets/less/bootstrap/*.less'
+          'assets/scss/*.scss',
+          'assets/scss/foundation/*.scss',
+          'assets/scss/foundation/components/*.scss'
         ],
-        tasks: ['less', 'version']
+        tasks: ['sass', 'version']
       },
       js: {
         files: [
@@ -106,13 +104,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-wp-version');
 
   // Register tasks
   grunt.registerTask('default', [
     'clean',
-    'less',
+    'sass',
     'uglify',
     'version'
   ]);
