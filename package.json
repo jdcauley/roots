@@ -1,14 +1,14 @@
 {
-  "name": "roots",
-  "version": "6.5.2",
-  "author": "Ben Word <ben@benword.com>",
+  "name": "roots with foundation",
+  "version": "0.1",
+  "author": "Ben Word <ben@benword.com> Foundation edits by Jordan Cauley <jordan@cauley.co>",
   "homepage": "http://roots.io",
   "repository": {
     "type": "git",
-    "url": "git://github.com/roots/roots.git"
+    "url": "git://github.com/jdcauley/roots-with-foundation.git"
   },
   "bugs": {
-    "url" : "https://github.com/roots/roots/issues"
+    "url" : "https://github.com/jdcauley/roots-with-foundation/issues"
   },
   "licenses": [{
     "type": "MIT",
