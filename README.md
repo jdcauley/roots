@@ -1,3 +1,7 @@
+# Roots with Foundation
+
+Roots with foundation is a variant of the [Roots Theme](http://roots.io/) that uses Zurb Foundation rather than Twitter Bootstrap as a frontend framework.
+
 # [Roots Theme](http://roots.io/)
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
@@ -43,7 +47,7 @@ Edit `lib/init.php` to setup custom navigation menus and post thumbnail sizes.
 
 * Organized file and template structure
 * HTML5 Boilerplate's markup along with ARIA roles and microformat
-* Bootstrap
+* Foundation
 * [Grunt build script](http://roots.io/using-grunt-for-wordpress-theme-development/)
 * [Theme activation](http://roots.io/roots-101/#theme-activation)
 * [Theme wrapper](http://roots.io/an-introduction-to-the-roots-theme-wrapper/)
