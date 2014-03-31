@@ -7,11 +7,11 @@
  *
  * Enqueue scripts in the following order:
  * 1. jquery-1.11.0.min.js via Google CDN
- * 2. /theme/assets/js/vendor/modernizr-2.7.0.min.js
+ * 2. /theme/assets/js/vendor/modernizr.min.js
  * 3. /theme/assets/js/main.min.js (in footer)
  */
 function roots_scripts() {
-  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '5194de6d408556c78af04ae2306903fe');
+  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '4d2fb1518c8d87855e6330bc313c262a');
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
   // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
@@ -26,8 +26,8 @@ function roots_scripts() {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
-  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '97d057f56f2b8a921f6577ead0abc54b', true);
+  wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr.min.js', array(), null, false);
+  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '14d67e0e9d8e633d311d2dcba1fd3bdd', true);
   wp_enqueue_script('modernizr');
   wp_enqueue_script('jquery');
   wp_enqueue_script('roots_scripts');
@@ -39,7 +39,7 @@ function roots_jquery_local_fallback($src, $handle = null) {
   static $add_jquery_fallback = false;
 
   if ($add_jquery_fallback) {
-    echo '<script>window.jQuery || document.write(\'<script src="' . get_template_directory_uri() . '/assets/js/vendor/jquery-1.11.0.min.js"><\/script>\')</script>' . "\n";
+    echo '<script>window.jQuery || document.write(\'<script src="' . get_template_directory_uri() . '/assets/vendor/jquery/jquery.min.js"><\/script>\')</script>' . "\n";
     $add_jquery_fallback = false;
   }
 
