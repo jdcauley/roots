@@ -26,22 +26,23 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'assets/js/scripts.min.js': [
-            'assets/vendor/foundation/abide.js',
-            'assets/vendor/foundation/accordian.js',
-            'assets/vendor/foundation/alert.js',
-            'assets/vendor/foundation/clearing.js',
-            'assets/vendor/foundation/dropdown.js',
-            'assets/vendor/foundation/framework.js',
-            'assets/vendor/foundation/helpers.js',
-            'assets/vendor/foundation/interchange.js',
-            'assets/vendor/foundation/joyride.js',
-            'assets/vendor/foundation/magellan.js',
-            'assets/vendor/foundation/offcanvas.js',
-            'assets/vendor/foundation/orbit.js',
-            'assets/vendor/foundation/reveal.js',
-            'assets/vendor/foundation/tab.js',
-            'assets/vendor/foundation/tooltip.js',
-            'assets/vendor/foundation/topbar.js',
+            'assets/vendor/foundation/js/foundation/abide.js',
+            'assets/vendor/foundation/js/foundation/accordian.js',
+            'assets/vendor/foundation/js/foundation/alert.js',
+            'assets/vendor/foundation/js/foundation/clearing.js',
+            'assets/vendor/foundation/js/foundation/dropdown.js',
+            'assets/vendor/foundation/js/foundation/framework.js',
+            'assets/vendor/foundation/js/foundation/helpers.js',
+            'assets/vendor/foundation/js/foundation/interchange.js',
+            'assets/vendor/foundation/js/foundation/joyride.js',
+            'assets/vendor/foundation/js/foundation/magellan.js',
+            'assets/vendor/foundation/js/foundation/offcanvas.js',
+            'assets/vendor/foundation/js/foundation/orbit.js',
+            'assets/vendor/foundation/js/foundation/reveal.js',
+            'assets/vendor/foundation/js/foundation/tab.js',
+            'assets/vendor/foundation/js/foundation/tooltip.js',
+            'assets/vendor/foundation/js/foundation/topbar.js',
+            'assets/vendor/foundation/js/foundation.js',
             'assets/js/plugins/*.js',
             'assets/js/_*.js'
           ]
@@ -77,9 +78,9 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: [
-          'assets/scss/*.scss',
-          'assets/scss/foundation/*.scss',
-          'assets/scss/foundation/components/*.scss'
+          'assets/vendor/foundation/scss/normalize.scss',
+          'assets/vendor/foundation/scss/foundation.scss',
+          'assets/scss/*.scss'
         ],
         tasks: ['sass', 'version']
       },
