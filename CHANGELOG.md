@@ -1,4 +1,9 @@
 ### HEAD
+* Removed Bootstrap CSS/LESS & JS
+* Added Zurb Foundation CSS/SASS & JS
+* Changed grunt config to compile SASS/SCSS.
+
+### ROOTS HISTORY
 * Update to Bootstrap 3.1.1
 
 ### 6.5.2: February 4th, 2014

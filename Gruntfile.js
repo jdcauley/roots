@@ -26,22 +26,23 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'assets/js/scripts.min.js': [
-            'assets/js/plugins/foundation/abide.js',
-            'assets/js/plugins/foundation/accordian.js',
-            'assets/js/plugins/foundation/alert.js',
-            'assets/js/plugins/foundation/clearing.js',
-            'assets/js/plugins/foundation/dropdown.js',
-            'assets/js/plugins/foundation/framework.js',
-            'assets/js/plugins/foundation/helpers.js',
-            'assets/js/plugins/foundation/interchange.js',
-            'assets/js/plugins/foundation/joyride.js',
-            'assets/js/plugins/foundation/magellan.js',
-            'assets/js/plugins/foundation/offcanvas.js',
-            'assets/js/plugins/foundation/orbit.js',
-            'assets/js/plugins/foundation/reveal.js',
-            'assets/js/plugins/foundation/tab.js',
-            'assets/js/plugins/foundation/tooltip.js',
-            'assets/js/plugins/foundation/topbar.js',
+            'assets/vendor/foundation/js/foundation/abide.js',
+            'assets/vendor/foundation/js/foundation/accordian.js',
+            'assets/vendor/foundation/js/foundation/alert.js',
+            'assets/vendor/foundation/js/foundation/clearing.js',
+            'assets/vendor/foundation/js/foundation/dropdown.js',
+            'assets/vendor/foundation/js/foundation/framework.js',
+            'assets/vendor/foundation/js/foundation/helpers.js',
+            'assets/vendor/foundation/js/foundation/interchange.js',
+            'assets/vendor/foundation/js/foundation/joyride.js',
+            'assets/vendor/foundation/js/foundation/magellan.js',
+            'assets/vendor/foundation/js/foundation/offcanvas.js',
+            'assets/vendor/foundation/js/foundation/orbit.js',
+            'assets/vendor/foundation/js/foundation/reveal.js',
+            'assets/vendor/foundation/js/foundation/tab.js',
+            'assets/vendor/foundation/js/foundation/tooltip.js',
+            'assets/vendor/foundation/js/foundation/topbar.js',
+            'assets/vendor/foundation/js/foundation.js',
             'assets/js/plugins/*.js',
             'assets/js/_*.js'
           ]
@@ -62,12 +63,24 @@ module.exports = function(grunt) {
         jsHandle: 'roots_scripts'
       }
     },
+    modernizr: {
+      dist: {
+        devFile: 'assets/vendor/modernizr/modernizr.js',
+        outputFile: 'assets/js/vendor/modernizr.min.js',
+        files: [
+          ['assets/js/scripts.min.js'],
+          ['assets/css/main.min.css']
+        ],
+        uglify: true,
+        parseFiles: false
+      }
+    },
     watch: {
       sass: {
         files: [
-          'assets/scss/*.scss',
-          'assets/scss/foundation/*.scss',
-          'assets/scss/foundation/components/*.scss'
+          'assets/vendor/foundation/scss/normalize.scss',
+          'assets/vendor/foundation/scss/foundation.scss',
+          'assets/scss/*.scss'
         ],
         tasks: ['sass', 'version']
       },
@@ -106,6 +119,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-wp-version');
+  grunt.loadNpmTasks('grunt-modernizr');
 
   // Register tasks
   grunt.registerTask('default', [
@@ -116,6 +130,10 @@ module.exports = function(grunt) {
   ]);
   grunt.registerTask('dev', [
     'watch'
+  ]);
+  grunt.registerTask('build', [
+    'default',
+    'modernizr'
   ]);
 
 };
